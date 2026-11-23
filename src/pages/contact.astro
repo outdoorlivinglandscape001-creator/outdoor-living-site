@@ -1,34 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
-
-const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? '';
 ---
 
 <Layout
-  title="Contact Outdoor Living Landscape | San Diego Consultation"
-  description="Request a consultation for your San Diego outdoor living project. Call (760) 683-4546 or send a message."
+  title="Contact Outdoor Living Landscape | San Diego Quotes and Consultations"
+  description="Request a quote or schedule a consultation for your San Diego outdoor living project. Call (760) 683-4546 or send a message."
 >
   <main>
     <div class="wrap">
       <h1>Request a Consultation</h1>
       <p class="lead">
-        Tell us about your yard and how you'd like to use it. Call <a href={site.phoneHref}>{site.phone}</a>, email
+        Tell us about your yard and how you'd like to use it. Call <a href={site.phoneHref}>{site.phone}</a>, email{' '}
         <a href={`mailto:${site.email}`}>{site.email}</a>, or fill out the form.
       </p>
 
-      {endpoint ? (
-        <form action={endpoint} method="POST">
-          <label>Name <input type="text" name="name" required /></label>
-          <label>Email <input type="email" name="email" required /></label>
-          <label>Phone <input type="tel" name="phone" /></label>
-          <label>City <input type="text" name="city" /></label>
-          <label>Tell us about your project <textarea name="message" rows="5" required></textarea></label>
-          <button class="btn" type="submit">Send</button>
-        </form>
-      ) : (
-        <p>[Form disabled: set PUBLIC_FORMSPREE_ENDPOINT in .env (see Bitwarden)]</p>
-      )}
+      <form id="lead-form" novalidate>
+        <label>
+          I'd like to
+          <select name="intent" required>
+            <option value="consultation">Schedule a consultation</option>
+            <option value="quote">Request a quote</option>
+            <option value="question">Ask a question</option>
+          </select>
+        </label>
+        <label>Name <input type="text" name="name" autocomplete="name" required /></label>
+        <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+        <label>Phone <input type="tel" name="phone" autocomplete="tel" /></label>
+        <label>City <input type="text" name="city" /></label>
+        <label>Tell us about your project <textarea name="message" rows="5" required></textarea></label>
+
+        <div class="hp" aria-hidden="true">
+          <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+
+        <button class="btn" type="submit">Send</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </main>
 </Layout>
+
+<script>
+  const form = document.getElementById('lead-form') as HTMLFormElement;
+  const status = document.getElementById('form-status') as HTMLElement;
+  const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const endpoint = import.meta.env.PUBLIC_LEAD_WEBHOOK_URL as string | undefined;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.textContent = '';
+    status.className = '';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = new FormData(form);
+    if (data.get('website')) {
+      status.textContent = 'Thanks. We got your message and we\'ll be in touch soon.';
+      return;
+    }
+    data.delete('website');
+    data.append('source_page', location.pathname);
+    data.append('submitted_at', new Date().toISOString());
+
+    button.disabled = true;
+
+    if (!endpoint) {
+      console.info('Demo mode, no webhook set. Form data:', Object.fromEntries(data));
+      status.textContent = 'Demo mode: this would be sent to the lead automation now.';
+      status.className = 'ok';
+      form.reset();
+      button.disabled = false;
+      return;
+    }
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: new URLSearchParams(data as unknown as Record<string, string>),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      status.textContent = 'Thanks. We got your message and we\'ll be in touch soon.';
+      status.className = 'ok';
+      form.reset();
+    } catch {
+      status.textContent = 'Something went wrong. Please call (760) 683-4546 or email info@outdoorlivinglandscape.com.';
+      status.className = 'err';
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
