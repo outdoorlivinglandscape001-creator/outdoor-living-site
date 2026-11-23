@@ -19,7 +19,7 @@ const schema = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <section class="hero">
+  <section class="hero has-photo">
     <div class="wrap">
       <h1>Custom Outdoor Living Spaces in San Diego</h1>
       <p class="lead">The yard you walk out to at the end of the day, and the one your friends talk about after they leave.</p>
@@ -35,6 +35,8 @@ const schema = {
         San Diego gives you the weather to live outdoors most of the year. Most yards don't give you a reason to. We build the ones that do: the pool you slip into after work, the kitchen where dinner turns into the whole evening, the fire that keeps everyone out past dark.
       </p>
       <p class="lead">Before long, the yard is where your day ends.</p>
+
+      <img class="photo" src="/images/stock/stock-pergola.jpg" alt="Wooden dining table and chairs under a pergola at night" />
 
       <ul class="grid">
         {services.slice(0, 8).map((s) => <li class="card">{s}</li>)}

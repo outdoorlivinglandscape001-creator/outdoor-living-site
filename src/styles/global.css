@@ -78,6 +78,26 @@ h2 { font-size: 1.6rem; margin: 40px 0 12px; }
   padding: 72px 0;
 }
 
+.hero.has-photo {
+  background:
+    linear-gradient(rgba(20, 16, 12, 0.5), rgba(20, 16, 12, 0.6)),
+    url('/images/stock/stock-hero.jpg') center / cover no-repeat;
+  color: #fff;
+  padding: 120px 0;
+}
+
+.hero.has-photo .lead { color: #f1ece3; }
+.hero.has-photo .btn { background: #faf7f2; color: var(--ink); }
+
+.photo {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 32px 0;
+}
+
 .btn {
   display: inline-block;
   background: var(--accent);
