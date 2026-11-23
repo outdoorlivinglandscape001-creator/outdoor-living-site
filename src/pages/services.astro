@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services } from '../data/site';
+---
+
+<Layout
+  title="Outdoor Living Services in San Diego | Outdoor Living Landscape"
+  description="Pools and spas, outdoor kitchens, pergolas, fire and water features, lighting, hardscape, decorative concrete and more across San Diego County."
+>
+  <main>
+    <div class="wrap">
+      <h1>Outdoor Living Services in San Diego</h1>
+      <p class="lead">[PLACEHOLDER: services intro, pending vault copy draft]</p>
+      <ul class="grid">
+        {services.map((s) => <li class="card">{s}</li>)}
+      </ul>
+      <p><a class="btn" href="/contact">Request a Consultation</a></p>
+    </div>
+  </main>
+</Layout>

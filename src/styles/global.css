@@ -1,0 +1,137 @@
+:root {
+  --bg: #faf8f4;
+  --ink: #23302a;
+  --muted: #5d6b63;
+  --accent: #2f5d46;
+  --accent-ink: #ffffff;
+  --stone: #e9e4da;
+  --max: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site {
+  background: #fff;
+  border-bottom: 1px solid var(--stone);
+}
+
+header.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover, nav a[aria-current='page'] { color: var(--accent); }
+
+main { padding: 48px 0; }
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 16px; }
+h2 { font-size: 1.6rem; margin: 40px 0 12px; }
+
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; }
+
+.hero {
+  background: var(--stone);
+  padding: 72px 0;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--stone);
+  border-radius: 8px;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.placeholder {
+  background: var(--stone);
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+form { display: grid; gap: 14px; max-width: 520px; }
+label { display: grid; gap: 4px; font-weight: 500; }
+input, textarea {
+  font: inherit;
+  padding: 10px;
+  border: 1px solid #c9c3b6;
+  border-radius: 6px;
+}
+
+footer.site {
+  background: var(--ink);
+  color: #d8ddd9;
+  padding: 32px 0;
+  font-size: 0.95rem;
+}
+
+footer.site a { color: #fff; }
+footer.site p { margin: 4px 0; }

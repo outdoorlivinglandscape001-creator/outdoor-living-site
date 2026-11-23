@@ -1,16 +1,52 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { site, services } from '../data/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: site.name,
+  url: site.url,
+  telephone: '+17606834546',
+  email: site.email,
+  areaServed: site.cities.map((c) => ({ '@type': 'City', name: c })),
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Custom Outdoor Living Spaces in San Diego | Outdoor Living Landscape"
+  description="Custom pools, outdoor kitchens, pergolas and hardscape in San Diego County, including Carlsbad, Encinitas, Solana Beach, Del Mar and Rancho Santa Fe."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Custom Outdoor Living Spaces in San Diego</h1>
+      <p class="lead">[PLACEHOLDER: hero line, pending vault copy draft]</p>
+      <p><a class="btn" href="/contact">Request a Consultation</a></p>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <h2>What We Build</h2>
+      <ul class="grid">
+        {services.slice(0, 8).map((s) => <li class="card">{s}</li>)}
+      </ul>
+      <p><a href="/services">See all services</a></p>
+
+      <h2>Signature Details</h2>
+      <p class="lead">[PLACEHOLDER: floating stairs and floating pool decks callout, pending interview with Ben]</p>
+
+      <h2>Recent Work</h2>
+      <div class="grid">
+        <div class="placeholder">Photo coming soon</div>
+        <div class="placeholder">Photo coming soon</div>
+        <div class="placeholder">Photo coming soon</div>
+      </div>
+
+      <h2>What Clients Say</h2>
+      <p class="lead">[PLACEHOLDER: testimonials, pending questionnaire]</p>
+    </div>
+  </main>
+</Layout>

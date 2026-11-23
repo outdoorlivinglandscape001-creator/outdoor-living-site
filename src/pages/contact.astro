@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+
+const endpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT ?? '';
+---
+
+<Layout
+  title="Contact Outdoor Living Landscape | San Diego Consultation"
+  description="Request a consultation for your San Diego outdoor living project. Call (760) 683-4546 or send a message."
+>
+  <main>
+    <div class="wrap">
+      <h1>Request a Consultation</h1>
+      <p class="lead">
+        Call <a href={site.phoneHref}>{site.phone}</a> or email
+        <a href={`mailto:${site.email}`}>{site.email}</a>, or use the form below.
+      </p>
+
+      {endpoint ? (
+        <form action={endpoint} method="POST">
+          <label>Name <input type="text" name="name" required /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Phone <input type="tel" name="phone" /></label>
+          <label>City <input type="text" name="city" /></label>
+          <label>Tell us about your project <textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      ) : (
+        <p>[Form disabled: set PUBLIC_FORMSPREE_ENDPOINT in .env (see Bitwarden)]</p>
+      )}
+    </div>
+  </main>
+</Layout>
