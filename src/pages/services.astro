@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { services } from '../data/site';
+import { site, services } from '../data/site';
 ---
 
 <Layout
@@ -10,10 +10,11 @@ import { services } from '../data/site';
   <main>
     <div class="wrap">
       <h1>Outdoor Living Services in San Diego</h1>
-      <p class="lead">[PLACEHOLDER: services intro, pending vault copy draft]</p>
+      <p class="lead">Pick the pieces that fit how you want to live outside, from a single pergola to a full backyard with a pool, kitchen, and fire feature. We build them to work together.</p>
       <ul class="grid">
         {services.map((s) => <li class="card">{s}</li>)}
       </ul>
+      <p class="lead">Not sure where to start? Call <a href={site.phoneHref}>{site.phone}</a> and tell us how you'd like to spend your evenings.</p>
       <p><a class="btn" href="/contact">Request a Consultation</a></p>
     </div>
   </main>

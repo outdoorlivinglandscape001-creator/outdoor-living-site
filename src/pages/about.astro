@@ -1,15 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
 ---
 
 <Layout
   title="About Outdoor Living Landscape | San Diego Outdoor Builder"
-  description="Meet Ben Nares and the team behind Outdoor Living Landscape, building high-end outdoor living spaces across San Diego County."
+  description="Outdoor Living Landscape builds outdoor spaces for people who want to use them, from large estates to small yards across San Diego County."
 >
   <main>
     <div class="wrap">
       <h1>About Outdoor Living Landscape</h1>
-      <p class="lead">[PLACEHOLDER: about copy, pending interview with Ben]</p>
+      <p class="lead">We build outdoor spaces for people who want to use them.</p>
+      <p>Our projects run from large estate builds to small yards where every foot has a job. A small yard can still be the one your friends want to come to.</p>
+      <p>
+        We take on the details other builders skip, because those are what people remember. We work in Carlsbad, Leucadia, Encinitas, Solana Beach, Del Mar, Rancho Santa Fe, and the surrounding area. Call <a href={site.phoneHref}>{site.phone}</a> and tell us about your yard.
+      </p>
     </div>
   </main>
 </Layout>

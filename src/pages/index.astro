@@ -22,31 +22,33 @@ const schema = {
   <section class="hero">
     <div class="wrap">
       <h1>Custom Outdoor Living Spaces in San Diego</h1>
-      <p class="lead">[PLACEHOLDER: hero line, pending vault copy draft]</p>
+      <p class="lead">The yard you walk out to at the end of the day, and the one your friends talk about after they leave.</p>
+      <p>Pools, outdoor kitchens, pergolas, and hardscape in Carlsbad, Encinitas, Del Mar, Rancho Santa Fe, and across San Diego County.</p>
       <p><a class="btn" href="/contact">Request a Consultation</a></p>
     </div>
   </section>
 
   <main>
     <div class="wrap">
-      <h2>What We Build</h2>
+      <h2>Spend More Time Outside</h2>
+      <p class="lead">
+        San Diego gives you the weather to live outdoors most of the year. Most yards don't give you a reason to. We build the ones that do: the pool you slip into after work, the kitchen where dinner turns into the whole evening, the fire that keeps everyone out past dark.
+      </p>
+      <p class="lead">Before long, the yard is where your day ends.</p>
+
       <ul class="grid">
         {services.slice(0, 8).map((s) => <li class="card">{s}</li>)}
       </ul>
       <p><a href="/services">See all services</a></p>
 
-      <h2>Signature Details</h2>
-      <p class="lead">[PLACEHOLDER: floating stairs and floating pool decks callout, pending interview with Ben]</p>
+      <h2>The Details People Ask About</h2>
+      <p class="lead">Some features take more work than most crews want to take on. We build them anyway, because they're the ones guests stop and look at.</p>
+      <p><strong>Floating stairs.</strong> They look like they're hovering. Getting there takes twice the formwork: every other step gets poured first, then we come back for the ones in between. It's slow, and it's why you rarely see them done well.</p>
+      <p><strong>Floating pool decks.</strong> Pools settle and rise with the weight of the water, and a regular deck cracks along the edge where it meets the pool. A floating deck sits over that seam, so the pool can move underneath and the surface stays whole.</p>
 
-      <h2>Recent Work</h2>
-      <div class="grid">
-        <div class="placeholder">Photo coming soon</div>
-        <div class="placeholder">Photo coming soon</div>
-        <div class="placeholder">Photo coming soon</div>
-      </div>
-
-      <h2>What Clients Say</h2>
-      <p class="lead">[PLACEHOLDER: testimonials, pending questionnaire]</p>
+      <h2>Start With a Conversation</h2>
+      <p class="lead">Tell us what you picture when you imagine your yard at its best. Call <a href={site.phoneHref}>{site.phone}</a> or send a message, and we'll take it from there.</p>
+      <p><a class="btn" href="/contact">Request a Consultation</a></p>
     </div>
   </main>
 </Layout>
