@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="Privacy Policy | Outdoor Living Landscape"
+  description="How Outdoor Living Landscape handles the information you send through this website."
+>
+  <main>
+    <div class="wrap">
+      <h1>Privacy Policy</h1>
+      <p class="lead">Last updated November 2026.</p>
+
+      <h2>What we collect</h2>
+      <p>
+        When you use the contact form, we collect the name, email address, phone number, city, and message you enter, along with the page you sent it from and the time you sent it. We don't ask for payment details or other sensitive information.
+      </p>
+
+      <h2>How we use it</h2>
+      <p>
+        We use this information only to reply to your request, such as a quote, a consultation, or a question, and to keep a record of it so we can follow up. We don't sell your information or share it with advertisers.
+      </p>
+
+      <h2>Where it goes</h2>
+      <p>
+        Your message is sent to our business email and saved in a private spreadsheet that only our team can open. These run on Google and on our own automation server.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        This site may use privacy-friendly analytics that count visits without cookies and without tracking you across other websites.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        To see, correct, or delete the information you sent us, email <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+    </div>
+  </main>
+</Layout>

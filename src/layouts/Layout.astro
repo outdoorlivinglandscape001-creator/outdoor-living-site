@@ -46,7 +46,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
         <p><strong>{site.name}</strong></p>
         <p>Serving {site.area}: {site.cities.join(', ')}, and surrounding areas.</p>
         <p><a href={site.phoneHref}>{site.phone}</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>
-        <p>{site.license}</p>
+        <p>{site.license} · <a href="/privacy">Privacy</a></p>
       </div>
     </footer>
   </body>
