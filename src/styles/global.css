@@ -28,8 +28,8 @@ a { color: var(--link); }
 }
 
 header.site {
-  background: var(--bg);
-  border-bottom: 1px solid var(--stone);
+  background: #000;
+  border-bottom: none;
 }
 
 header.site .wrap {
@@ -37,9 +37,8 @@ header.site .wrap {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  gap: 0;
+  padding: 0;
 }
 
 .brand {
@@ -47,6 +46,8 @@ header.site .wrap {
   font-size: 1.15rem;
   color: var(--ink);
   text-decoration: none;
+  display: block;
+  line-height: 0;
 }
 
 nav ul {
@@ -59,12 +60,12 @@ nav ul {
 }
 
 nav a {
-  color: var(--ink);
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
 
-nav a:hover, nav a[aria-current='page'] { color: var(--link); }
+nav a:hover, nav a[aria-current='page'] { color: #c9b99a; }
 
 main { padding: 48px 0; }
 
