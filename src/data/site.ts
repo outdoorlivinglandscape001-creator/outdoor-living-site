@@ -3,7 +3,7 @@ export const site = {
   url: 'https://outdoorlivinglandscape.com',
   phone: '(760) 683-4546',
   phoneHref: 'tel:+17606834546',
-  email: 'info@outdoorlivinglandscape.com',
+  email: 'ben@outdoorlivinglandscape.com',
   owner: 'Ben Nares',
   area: 'San Diego County',
   cities: ['Carlsbad', 'Leucadia', 'Encinitas', 'Solana Beach', 'Del Mar', 'Rancho Santa Fe'],
