@@ -25,7 +25,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="brand" href="/">{site.name}</a>
+        <a class="brand" href="/"><img src="/logo.png" alt={site.name} height="40" /></a>
         <nav aria-label="Main">
           <ul>
             {nav.map((item) => (
