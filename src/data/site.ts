@@ -16,22 +16,22 @@ export const site = {
   },
 };
 
-export const services = [
-  'Pools & Spas',
-  'Outdoor Kitchens',
-  'Pergolas',
-  'Fire Features',
-  'Water Features',
-  'Outdoor Lighting',
-  'Outdoor Sound Systems',
-  'Hardscape & Landscape',
-  'Tile',
-  'Decorative Concrete',
-  'Poured-in-Place Walls',
-  'Decorative Walls',
-  'Decorative Stucco',
-  'Floating Stairs',
-  'Floating Pool Decks',
+export const services: { name: string; href?: string }[] = [
+  { name: 'Pools & Spas' },
+  { name: 'Outdoor Kitchens' },
+  { name: 'Pergolas' },
+  { name: 'Fire Features' },
+  { name: 'Water Features' },
+  { name: 'Outdoor Lighting' },
+  { name: 'Outdoor Sound Systems' },
+  { name: 'Hardscape & Landscape' },
+  { name: 'Tile' },
+  { name: 'Decorative Concrete' },
+  { name: 'Poured-in-Place Walls' },
+  { name: 'Decorative Walls', href: '/decorative-walls' },
+  { name: 'Decorative Stucco' },
+  { name: 'Floating Stairs' },
+  { name: 'Floating Pool Decks' },
 ];
 
 export const nav = [

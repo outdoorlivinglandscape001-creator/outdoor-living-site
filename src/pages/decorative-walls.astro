@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="Decorative Walls in San Diego | Outdoor Living Landscape"
+  description="Custom decorative walls built to last in San Diego County. Poured-in-place and hand-finished by Outdoor Living Landscape."
+>
+  <main>
+    <div class="wrap">
+      <h1>Decorative Walls</h1>
+      <p class="lead">Walls that do more than hold ground. We build decorative walls that become part of the design — finished by hand, built to last.</p>
+
+      <img
+        class="photo"
+        src="/images/decorative-walls.jpg"
+        alt="Custom decorative wall built by Outdoor Living Landscape in San Diego"
+      />
+
+      <p>Whether it's a retaining wall that doubles as a design feature, a garden boundary, or a backdrop for a fire or water element, we take the same care with walls that most people spend on the showpiece. The finish matters. The drainage matters. So does how it looks ten years from now.</p>
+
+      <h2>Start With a Conversation</h2>
+      <p class="lead">Call <a href={site.phoneHref}>{site.phone}</a> or send a message and tell us what you have in mind.</p>
+      <p><a class="btn" href="/contact">Get in Touch</a></p>
+      <p><a href="/services">← Back to all services</a></p>
+    </div>
+  </main>
+</Layout>

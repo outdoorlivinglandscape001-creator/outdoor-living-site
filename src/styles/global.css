@@ -82,7 +82,7 @@ h2 { font-size: 1.6rem; margin: 40px 0 12px; }
 .hero.has-photo {
   background:
     linear-gradient(rgba(20, 16, 12, 0.5), rgba(20, 16, 12, 0.6)),
-    url('/images/stock/stock-hero.jpg') center / cover no-repeat;
+    url('/images/pool-outdoor-kitchen.jpg') center / cover no-repeat;
   color: #fff;
   padding: 120px 0;
 }
